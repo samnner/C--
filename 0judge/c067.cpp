@@ -20,5 +20,6 @@ int main(){
         cout << "Set #" << cnt << "\n" << "The minimum number of moves is " << move <<"."<< "\n" << endl;
         cnt++;
     }
+    
     return 0;
 }

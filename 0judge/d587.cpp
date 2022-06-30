@@ -13,6 +13,5 @@ int main(){
     for (int i = 0; i < sizeof(a)/4;i++){
         cout << a[i]<<" ";
     }
-
     return 0;
 }
