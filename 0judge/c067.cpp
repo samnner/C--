@@ -7,9 +7,7 @@ int main(){
     while(cin>>n){
         if(n==0)
             break;
-        else{
-          int a[n],sum = 0;
-        }
+        int a[n],sum = 0;
         for (int i = 0; i < n;i++){
             cin >> a[i];
             sum += a[i];
@@ -19,7 +17,7 @@ int main(){
             if(a[i]>hi)
                 move += a[i] - hi;
         }
-        cout << "Set #"cnt"" << cnt << "\n" << "The minimum number of moves is " << move <<"."<< "\n" << endl;
+        cout << "Set #" << cnt << "\n" << "The minimum number of moves is " << move <<"."<< "\n" << endl;
         cnt++;
     }
     return 0;
