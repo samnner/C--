@@ -1,26 +1,19 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<string>
+#include<regex>
 using namespace std;
 
 int main(){
-    ios::sync_with_stdio(false);
-    int n,cnt=1;
-    while(cin>>n){
-        if(n==0)
-            break;
-        else{
-          int a[n],sum = 0;
+    regex reg("[[:alpha:]]+");
+    string str;
+    smatch sm;
+    while(getline(cin,str)){
+        int cnt = 0;
+        while (regex_search(str, sm, reg)){
+            ++cnt;
+            str = sm.suffix().str();
         }
-        for (int i = 0; i < n;i++){
-            cin >> a[i];
-            sum += a[i];
-        }
-        int hi = sum / n,move=0;       
-        for (int i = 0; i < n;i++){
-            if(a[i]>hi)
-                move += a[i] - hi;
-        }
-        cout << "Set #"cnt"" << cnt << "\n" << "The minimum number of moves is " << move <<"."<< "\n" << endl;
-        cnt++;
+        cout << cnt << endl;
     }
     return 0;
 }

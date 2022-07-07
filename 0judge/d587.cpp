@@ -9,7 +9,7 @@ int main(){
         cin >> a[i];
     }
     sort(a, a+n);
-    //sort(begin(a), end(a));
+    //sort(begin(a), end(a));  question:為何不能用這個
     for (int i = 0; i < sizeof(a)/4;i++){
         cout << a[i]<<" ";
     }
