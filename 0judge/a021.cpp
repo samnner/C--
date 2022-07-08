@@ -117,7 +117,8 @@ string mul(string a, string b){
     for (int i = 0; i < b.length();i++) d[i]=b[i]-'0';
     for (int i = a.length() - 1; i >= 0; i--){
         for (int j = b.length() - 1; j >= 0; j--){
-            s[l-i-j-1] += c[i] * d[j];
+            if(i+j>=0)
+                s[i+j+1] += c[i] * d[j];
         }
     }
     for (int i = l-1; i > 0;i--){
@@ -151,16 +152,19 @@ string div(string a, string b){
                 t++;
                 num = num * 10 + (a[t]-'0');
             }
-            c = num / (b[0] - '0') + '0';
+            c += num / (b[0] - '0') + '0';
             for (int i = 0; i < a.length() - b.length() - t; i++) c += '0';
         }
         t = 0;
         while(!cmp(a,mul(b,c))){
                 c[t]--;
+                if(c[t]=='0'){
+                    ++t;
+                    c[t] = '9';
+                } 
         }
         a = min(a, mul(b, c));
         k = sum(k, c);
-        cout << c;
     }
     return k;
 }
