@@ -1,7 +1,7 @@
 #include<iostream>
 #include<string>
 #include<vector>
-#include<cmath>//沒有math.h??
+#include<math.h>//沒有math.h??
 using namespace std;
 
 long long isPrime(long long num){
