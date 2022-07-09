@@ -137,8 +137,8 @@ string mul(string a, string b){
 
 string div(string a, string b){
     if(!cmp(a,b)) return "0";
-    string c,k;
-    int t;
+    string c,k,temp;
+    int t=0;
     while(cmp(a,b)){
         c.clear();
         if((a[0]-'0')/(b[0]-'0')!=0){
@@ -148,7 +148,7 @@ string div(string a, string b){
         else{
             int num = 0;
             num = a[0] - '0';
-            while(num/b[0]==0){
+            while(num/(b[0]-'0')==0){
                 t++;
                 num = num * 10 + (a[t]-'0');
             }
@@ -161,10 +161,14 @@ string div(string a, string b){
                 if(c[t]=='0'){
                     ++t;
                     c[t] = '9';
+                    for (int i = 1; i < c.length();i++) temp+=c[i];
+                    c.clear();
+                    c = temp;
+                    temp.clear();
                 } 
         }
         a = min(a, mul(b, c));
         k = sum(k, c);
     }
-    return k;
+	return k;
 }
