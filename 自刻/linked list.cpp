@@ -4,7 +4,7 @@ using namespace std;
 struct listnode{
     int value;
     listnode *next;
-    listnode(int x) : value(x), next(NULL) {} //為甚麼要加;在最後//這行不是很懂
+    listnode(int x) : value(x), next(NULL) {} //為甚麼要加;在最後//這行不是很懂//初始化initializer
 };
 
 class linkedlist{
