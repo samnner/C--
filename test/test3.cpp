@@ -2,6 +2,10 @@
 using namespace std;
 
 int main(){
-    cout << 1 / 1 << "test" << endl;
-    return 0;
+    int j;
+    for (int i = 0; i < 6;i++){
+        j = i;
+        cout << j;
+    }
+        return 0;
 }

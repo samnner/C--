@@ -43,7 +43,6 @@ public:
 int main(){
     linkedlist list;
     //list.push_back();
-    //list.push_back();
     list.display();
     return 0;
 }
